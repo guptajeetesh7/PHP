@@ -7,6 +7,7 @@ if(isset($_POST['submit']) ){
 
 
 
+
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -14,25 +15,32 @@ if(isset($_POST['submit']) ){
 
 	if(!empty($username) && !empty($password)){
 
-	$query = "SELECT `username` , `password` FROM `data` WHERE `username`='$username' AND   `password` ='$password_hash' ";
+
+	
+	$query = "SELECT  `id` , `username` , `password` FROM `data` WHERE `username` = '$username' AND   `password` =  '$password_hash' ";
 	if($query_run = mysql_query($query)){
 
+		
+		
 		$query_rows = mysql_num_rows($query_run);
 		if($query_rows == 0){
 			echo 'INVALID ACCOUNT';
 		}
 
 		elseif ($query_rows == 1) {
-			$user_id = mysql_result($query_run,0,"username" );
-			$_SESSION['username'] = $user_id;
-			header('Location : loginpage.php');
-			//header('Location : loginpage.php');
+			$user_name = mysql_result($query_run,0,"username" );
+			$_SESSION['username'] = $user_name;
+
+			
+			header('Location: index.php');
+		
 		}
 
 	}
+
 	else
 	{
-		
+		echo mysql_error();
 	}
 
 

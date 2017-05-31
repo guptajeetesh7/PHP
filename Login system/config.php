@@ -1,12 +1,13 @@
 <?php
 
  ob_start();
+ 
  session_start();
 
 
+//echo  $_SERVER[' HTTP_REFERER '];
 
 $http_referer = $_SERVER['HTTP_REFERER'];
-echo $http_referer;
 
  function loggedin(){
 
@@ -19,6 +20,7 @@ echo $http_referer;
  {
  	return false;
  }
+
 }
 
 
