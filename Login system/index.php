@@ -6,9 +6,11 @@ include 'config.php';
 
 //include 'loginpage.php';
 
-if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
+if(loggedin())
 
-	echo 'You are already logged in';
+{
+
+	echo 'You are already logged in <a href =" logout.php "  >Log out </a>';
 }
 
 else

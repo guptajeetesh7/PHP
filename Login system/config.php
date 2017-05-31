@@ -3,7 +3,28 @@
  ob_start();
  session_start();
 
- 
+
+
+$http_referer = $_SERVER['HTTP_REFERER'];
+echo $http_referer;
+
+ function loggedin(){
+
+ if(isset($_SESSION['username']) && !empty($_SESSION['username']))
+ {
+ 	return true ;
+
+ }
+ else
+ {
+ 	return false;
+ }
+}
+
+
+
+
+
 mysql_connect('localhost','root','');
 
 $query ="CREATE DATABASE `login`";
