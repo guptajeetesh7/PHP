@@ -7,7 +7,7 @@
 
 //echo  $_SERVER[' HTTP_REFERER '];
 
-$http_referer = $_SERVER['HTTP_REFERER'];
+//$http_referer = $_SERVER['HTTP_REFERER'];
 
  function loggedin(){
 

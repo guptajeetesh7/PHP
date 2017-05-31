@@ -69,6 +69,10 @@ if(isset($_POST['submit']) ){
   USERNAME ::<input type="text" name="username" placeholder="username" ><br><br>
   PASSWORD ::<input type="password" name="password" placeholder="password"><br><br>
   <input type="submit" name="submit" value="LOGIN">
-  <input type="submit" name="new" value="SIGN IN">
+  
 
+</form>
+
+<form action="register.php">
+	<input type="submit" name="SIGN IN" value="SIGN IN">
 </form>
